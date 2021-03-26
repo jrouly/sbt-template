@@ -12,3 +12,9 @@ scriptedBufferLog := false
 scriptedLaunchOpts ++= Seq("-Xmx1024M", "-server", "-Dplugin.version=" + version.value)
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
+
+enablePlugins(SbtPlugin)
+sbtPlugin := true
+
+// https://github.com/sbt/sbt/issues/5049
+crossSbtVersions := Vector("1.1.6")
